@@ -1,0 +1,49 @@
+#DON'T TOUCH THIS CODE UNLESS YOU KNOW PYTHON
+#go to repl.it and copy paste the code below and press run
+
+from scipy.stats import norm
+import math
+
+hola=1
+while hola==1:
+  a=""
+  b=""
+  c=""
+  a=input("what do you want to find: normcdf or invnorm?")
+  try:
+    if a=="normcdf":
+      b=input("above?below?between?:")
+
+    if a=="invnorm":
+      b=norm.ppf(float(input("what is the percentile?:")))
+      print(b)
+      print("")
+      print("")
+
+    if b=="above":
+      c=norm.cdf(float(input("z-score?:")))
+      print(1-c)
+      print("")
+      print("")
+    elif b=="below":
+      c=norm.cdf(float(input("z-score?:")))
+      print(c)
+      print("")
+      print("")
+    elif b=="between":
+      c=norm.cdf(float(input("lower z-score?:")))
+      d=norm.cdf(float(input("higher z-score?:")))
+      print(d-c)
+      print("")
+      print("")
+
+  except NameError:
+    print("you messed up!! start again")
+    print("")
+    print("")
+    pass
+  except ValueError:
+    print("this has to be a number! start again")
+    print("")
+    print("")
+    pass

@@ -1,0 +1,50 @@
+#Copy paste the code below at repl.it follow the steps in lines 2 and 3
+#DO NOT TOUCH THE OTHER THAN LINE 10 AND 12!!!!!!!!!!!
+#****THIS WILL ONLY WORK IF YOU INPUT LINE 10 AND 12 CORRECTLY****
+
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.stats
+
+#INPUT YOUR EXPLANATORY VARIABLE HERE ex. x=np.array([1,2,3,4,5])
+x=np.array([1,5,8,0,5])
+#INPUT YOUR RESPONSE VARIABLE HERE ex. y=np.array([5,6,7,8,9])
+y=np.array([80,95,98,80,0])
+
+
+#find r value
+r=np.corrcoef(x,y)[0][1]
+
+#tell me r value
+print("your correlation coefficient is r =", r)
+print("your coefficient of determination is R^2 =", r**2)
+print("")
+
+#interpret r value
+if 1>r>=0.7:
+  print("Positive strong correlation between explanatory variable and response variable")
+elif 0.7>r>=0.4:
+  print("Positive moderate correlation between explanatory variable and response variable")
+elif 0.4>r>0:
+  print("Positive weak correlation between explanatory variable and response variable")
+elif 0>r>-0.4:
+  print("Negative weak correlation between explanatory variable and response variable")
+elif -0.4>=r>-0.7:
+  print("Negative moderate correlation between explanatory variable and response variable")
+elif -0.7>=r>-1:
+  print("Negative strong correlation between explanatory variable and response variable")
+else:
+  print("idk what is going on lmao")
+
+#Create line of best fit
+m,b= np.polyfit(x, y, 1)
+#tell me line of best fit
+print("")
+print("the function for the line of best fit is: y_hat=",m,"x","+",b)
+
+#create scatterplot
+plt.scatter(x,y)
+
+#graph line of best fit
+plt.plot(x, m*x + b)
+plt.show()
