@@ -1,7 +1,7 @@
 
 # Project Proposal
 
-Heart related diseases are the number one cause of death worldwide, accounting for almost 31% of all deaths across the globe. While heart failures can be prevented through strict diet and healthy life styles, the question we must also ask is: Given certain conditions about someone, how likely is it the person to survive from a heart failure; and what contributes the most in determining whether the person survives or not?
+Heart related diseases are the number one cause of death worldwide, accounting for almost 31% of all deaths across the globe. While heart failures can be prevented through strict diet and healthy life styles, the question we must also ask is: Given certain conditions about someone, how likely is it for the person to survive from a heart failure; and what contributes the most in determining whether the person survives or not?
 
 In order to predict the mortality rate caused by heart failures, dataset consisting informations of 299 patients who suffered a sever heart failure was gathered from https://www.kaggle.com/andrewmvd/heart-failure-clinical-data. We will be taking a deep analysis of how each features contribute to the mortality rate, and utilize various tree based models to evaluate the likelihood of survival for this classification problem.
 
