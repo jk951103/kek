@@ -57,12 +57,14 @@ In search for an even better model, an XGBoost model was built using Bayesian Hy
 
 ![image](https://user-images.githubusercontent.com/81454133/113960982-f4322300-97ea-11eb-9a92-0b73bb6bc378.png)
 
-We can see that the results improved slightly, producing the feature importance graph below:
+We can see that the results improved very slightly, producing the feature importance graph below:
 
 ![image](https://user-images.githubusercontent.com/81454133/113961036-0ad87a00-97eb-11eb-9ee0-b5c9e914d253.png)
 
 
 ## Conclusion
+
+The most surprising finding from this project was that health conditions such as diabetes and high blood pressure, and unhealthy habbits such as smoking does not affect the mortality rate as much as one would assume. Rather, it seems that the patient's serum creatinine level, as well as his/her ejection fraction rates are what contributes the most to the mortality rate. Having a high serum creatinine level puts a lot of pressure in the patient's kidney, and this must have a huge impact on whether the patient survives or not. Ejection fraction rate determines how much blood is pumped out of the heart for each contraction; based on the finding from EDA, having a high ejaction fraction rate must also contribute to having a lower chance of surviving from a heart failure.
 
 
 
