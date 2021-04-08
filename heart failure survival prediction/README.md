@@ -19,9 +19,7 @@ After careful research on what is considered to be acceptable range for features
 ## Exploratory Data Analysis
 
 Most of the EDA process consisted of trying to identify whether there are any association between the individual features and the resulting death events. In the case of 
-categorical features such as gender, chi-squared contingency test was utilized in order to determine whether there exist an association between the feature and the death event. 
-
-In the case of quantitative features such as age, patients were divided into groups who survived and who did not, and distribution of each group was examined.
+categorical features such as gender, chi-squared contingency test was utilized in order to determine whether there exist an association between the feature and the death event. In the case of quantitative features such as age, patients were divided into groups who survived and who did not, and distribution of each group was examined.
 
 ![image](https://user-images.githubusercontent.com/81454133/113958731-32c5de80-97e7-11eb-964d-2b56a5475016.png)
 
@@ -30,7 +28,7 @@ Above shows the relationship between smoking and mortality rate; surprisingly, t
 ![image](https://user-images.githubusercontent.com/81454133/113959169-0363a180-97e8-11eb-9aba-ad048f603733.png)
 
 
-Above shows the difference in age distribution between patients that survived and patients that did not, we can clearly see that the older the patient is, the likelier it is for the patient to die. Overall, the biggest take away from the EDA process was that having certain level of platelet counts and serum creatinine levels increase the chance of surviving.
+Above shows the difference in age distribution between patients that survived and patients that did not, we can clearly see that the older the patient is, the likelier it is for the patient to die. Overall, the biggest take away from the EDA process was that having a high serum creatinine level or a high ejection fraction rate decreases the chance of surviving.
 
 ## Pre-Processing
 
