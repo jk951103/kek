@@ -7,7 +7,7 @@ Using a dataset containing information about 5000 random movies from the imdb, w
 
 
 # Data Wrangling
-The wrangling process began off by checking to see whether the budget and the gross of each movie is in local currency or in USD; this is very important as having a universal currency is absolutely essential. Average budget of Korean movies were used to compare with the average budget of US movies; this was because 1 USD is about 1000 KRW; which is a big enough discrepancy to see whether local currency is being used or not. 
+The wrangling process began off by checking to see whether the budget and the gross of each movie is in local currency or in USD; this is very important as having a universal currency is absolutely essential to train the model correctly. Average budget of Korean movies was used to compare with the average budget of US movies; this was because 1 USD is about 1000 KRW; which is a big enough discrepancy to see whether local currency is being used or not. 
 
 ![image](https://user-images.githubusercontent.com/81454133/117597737-d1f23480-b10b-11eb-84a2-27df098a2ff5.png)
 
@@ -16,28 +16,39 @@ As shown above, the average budget for Korean movies is about 300 times bigger t
 Judging from the fact that the conversion rate for each country's currency to USD varies continuously, and that it is not known when the gross of each movies were calculated; it is virtually an impossible task to convert every local currency into USD. We will only consider movies that have been made in the US, as a vast majority(3807 out of 5000) of the movies in the dataset are from the US.
 
 
-Many other features shown below were also removed; with reasons stated next to each removal process.
+Many other features shown below were also removed, with reasons stated next to each removal process.
 ![image](https://user-images.githubusercontent.com/81454133/117598345-3c57a480-b10d-11eb-939a-2038173bc57b.png)
 
 
 Next, the number of missing values were calculated:
 ![image](https://user-images.githubusercontent.com/81454133/117598418-64df9e80-b10d-11eb-9039-87d6f652a01c.png)
 
-Because gross and budget are the most frequent missing values, every observation of with missing values will be dropped in order to not jeopardize the predictability of the model.
+Because gross and budget are the most frequent missing values, every observation with missing values will be dropped in order to not jeopardize the predictability of the model.
 
-Next, which is perhaps the most important step of this data wrangling process; is to adjust the budget and the gross of each movie to current values; it would not make sense to say that a movie that made a million dollars in the 1930s performed equally as well as a movie that made a million dollars in 2016. the CPI library was used for this process.
+Next, which is perhaps the most important step of this data wrangling process, is to adjust the budget and the gross of each movie to current values; it would not make sense to say that a movie that made a million dollars in the 1930s performed equally as well as a movie that made a million dollars in 2016. the CPI library was used for this process.
 
 ![image](https://user-images.githubusercontent.com/81454133/117598742-023ad280-b10e-11eb-82c7-5ef84f1a328a.png)
 
-Next, Genres were one-hot encoded for modeling purposes.
+Next, Genres were one-hot encoded for modeling purposes. Genres that did not appear in the observation were removed.
 
 ![image](https://user-images.githubusercontent.com/81454133/117598895-55ad2080-b10e-11eb-9ad3-35ae19a1802c.png)
 
-Genres that did not appear in the observation were removed.
 
 Lastly, GDP Growth rate for each year was added in as a feature to serve as an indicator for the economic well-being at the time.
 
 ![image](https://user-images.githubusercontent.com/81454133/117599072-bb99a800-b10e-11eb-8bd5-3a9879d3ef3e.png)
 ![image](https://user-images.githubusercontent.com/81454133/117599106-cce2b480-b10e-11eb-870e-3abf2d2270e6.png)
 
+# Exploratory Data Analysis
+Relationship between some of the seemingly important features and the gross of each movies were examined; but it seemed that there was no specific feature that had a 'gigantic' impact on the gross of the movie as one would assume.
+
+![image](https://user-images.githubusercontent.com/81454133/117599410-65793480-b10f-11eb-95dc-80881c9eef6a.png)
+
+For example, above shows the relationship between the budget of a movie and the gross of the movie; there is a moderate correlation at best.
+
+An elementary attempt at seeing which genres contribute to the movies success was examined as shown below:
+
+![image](https://user-images.githubusercontent.com/81454133/117599595-b721bf00-b10f-11eb-93e5-472702fb9ab5.png)
+
+It seems like Documentary and Musical movies are the most profitable genre; Animation, Adventure, and Action movies cost the most to make.
 
