@@ -1,5 +1,5 @@
 # Project Proposal
-Would it be possible to predict how much a movie makes given certain information about the movie? This is certainly an interesting question that movie directors/fans may be concerned about; after all, the gross of the movie is arguably the sole determining factor of whether the movie was successful or not.
+Is it be possible to predict how much a movie would make before its release? This is certainly an interesting question that movie directors/fans may be concerned about; after all, the gross of the movie is arguably the sole determining factor of whether the movie was successful or not.
 
 Using a dataset containing information about 5000 random movies from the imdb, we will try to predict the gross of the movie using the information that will only be available before the release of the movie.
 
