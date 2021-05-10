@@ -40,7 +40,7 @@ Lastly, GDP Growth rate for each year was added in as a feature to serve as an i
 ![image](https://user-images.githubusercontent.com/81454133/117599106-cce2b480-b10e-11eb-870e-3abf2d2270e6.png)
 
 # Exploratory Data Analysis
-Relationship between some of the seemingly important features and the gross of each movies were examined; but it seemed that there was no specific feature that had a 'gigantic' impact on the gross of the movie as one would assume.
+Relationship between some of the seemingly important features and the gross of each movie were examined; but it seemed that there was no specific feature that had a 'gigantic' impact on the gross of the movie as one would assume.
 
 ![image](https://user-images.githubusercontent.com/81454133/117599410-65793480-b10f-11eb-95dc-80881c9eef6a.png)
 
@@ -51,4 +51,70 @@ An elementary attempt at seeing which genres contribute to the movies success wa
 ![image](https://user-images.githubusercontent.com/81454133/117599595-b721bf00-b10f-11eb-93e5-472702fb9ab5.png)
 
 It seems like Documentary and Musical movies are the most profitable genre; Animation, Adventure, and Action movies cost the most to make.
+
+
+Some conclusiosn to be made from the EDA process were that budget had somewhat of an influence in how much the movie would make(as one can easily assume), and that the popularity of the director and the actors did not have as big of an influence as one would assume.
+
+# Pre-Processing
+The 'color', 'language', and 'content_rating' features were one-hot encoded; as they are the only categorical features remaining in the dataset.
+
+![image](https://user-images.githubusercontent.com/81454133/117600265-3e236700-b111-11eb-93e0-719f833a4e13.png)
+
+
+Standard scaling process was skipped; as the intention was to mainly use tree based models; in the case that other regression methods were to be utilized later on, some other feature engineering process would have been done before rescaling the dataset.
+
+# Modeling
+## Default Random Forest Regressor
+
+![image](https://user-images.githubusercontent.com/81454133/117600555-c1dd5380-b111-11eb-85c7-348d3e32d1a7.png)
+![image](https://user-images.githubusercontent.com/81454133/117600579-cf92d900-b111-11eb-82e4-fe717b519507.png)
+
+With the R-Squared value being around 0.4 and the Mean Absolute Error being too high, it seems necessary to tune some hyperparameters.
+
+## Using Random Search Cross Validation
+
+Grid space was set as below; 3 folds were used for the cross validation process.
+![image](https://user-images.githubusercontent.com/81454133/117600818-53e55c00-b112-11eb-890c-33c58c2cd051.png)
+
+New model was fit and used to predict, producing the results below:
+![image](https://user-images.githubusercontent.com/81454133/117600906-82633700-b112-11eb-9f7f-1a41c13c1894.png)
+
+Mean Absolute Error is still too high, and although the R-Squared score went up a little, the model seems to be overfitting as well.
+
+### Handling Outliers
+The new model was used to predict the gross of each movie and to find outliers; careful steps were taken to avoid data leakage.
+
+![image](https://user-images.githubusercontent.com/81454133/117601087-fd2c5200-b112-11eb-8f9f-82604210d394.png)
+
+113 of the observations above were removed in an attempt to increase the predictability of the model; new predictions were made without these outliers as shown below:
+
+![image](https://user-images.githubusercontent.com/81454133/117601248-76c44000-b113-11eb-8c13-77d8bb5af35e.png)
+
+Just from removing some of the outliers, we can see that the R-Square score went up significantly and that the model is not overfitting at all. However, the Mean Absolute Error still seems to be too high.
+
+## Modifying Dataset
+In an attempt to see whether the model can perform better using less features; only some notable features were used to predict the gross of the movie as shown below:
+
+![image](https://user-images.githubusercontent.com/81454133/117601364-c4d94380-b113-11eb-8aa6-e5eb762f6d30.png)
+
+We can see that the model is terribly overfitting, and that both the R-Squared score and the Mean Absolute Error got significantly worse.
+
+Next attempt was to bring back the rating of the movie from the original dataset and include that as one of the features; this is justifiable in a sense that it is possible to have a group of audience rate the movie before the actual premier of the movie.
+
+![image](https://user-images.githubusercontent.com/81454133/117601725-a758a980-b114-11eb-8f3c-aafcaca5ac03.png)
+
+Random Search Cross Validation was used once again to find the new best model; and after only removing 62 outliers, the following results were obtained.
+
+![image](https://user-images.githubusercontent.com/81454133/117601872-f0a8f900-b114-11eb-9f48-407909921993.png)
+
+The Mean Absolute Error went down significantly from the previous models; and the model is not overfitting at all.
+
+![image](https://user-images.githubusercontent.com/81454133/117601955-20f09780-b115-11eb-887a-87b6ef9e554b.png)
+
+Feature importances and the scatterplot of Actual Gross vs Predicted Gross are shown above.
+
+
+
+
+
 
