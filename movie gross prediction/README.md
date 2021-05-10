@@ -7,7 +7,7 @@ Using a dataset containing information about 5000 random movies from the imdb, w
 
 
 # Data Wrangling
-The wrangling process began off by checking to see whether the budget and the gross of each movie is in local currency or in USD; this is very important as having a universal currency is absolutely essential to train the model correctly. Average budget of Korean movies was used to compare with the average budget of US movies; this was because 1 USD is about 1000 KRW; which is a big enough discrepancy to see whether local currency is being used or not. 
+The data wrangling process began off by checking to see whether the budget and the gross of each movie is in local currency or in USD; this is very important as having a universal currency is absolutely essential to train the model correctly. Average budget of Korean movies was used to compare with the average budget of US movies; this was because 1 USD is about 1000 KRW, which is a big enough discrepancy to see whether local currency is being used or not. 
 
 ![image](https://user-images.githubusercontent.com/81454133/117597737-d1f23480-b10b-11eb-84a2-27df098a2ff5.png)
 
@@ -56,12 +56,12 @@ It seems like Documentary and Musical movies are the most profitable genre; Anim
 Some conclusiosn to be made from the EDA process were that budget had somewhat of an influence in how much the movie would make(as one can easily assume), and that the popularity of the director and the actors did not have as big of an influence as one would assume.
 
 # Pre-Processing
-The 'color', 'language', and 'content_rating' features were one-hot encoded; as they are the only categorical features remaining in the dataset.
+The 'color', 'language', and 'content_rating' features were one-hot encoded, as they are the only categorical features remaining in the dataset.
 
 ![image](https://user-images.githubusercontent.com/81454133/117600265-3e236700-b111-11eb-93e0-719f833a4e13.png)
 
 
-Standard scaling process was skipped; as the intention was to mainly use tree based models; in the case that other regression methods were to be utilized later on, some other feature engineering process would have been done before rescaling the dataset.
+Standard scaling process was skipped, as the intention was to mainly use tree based models. In the case that other regression methods were to be utilized later on, some other feature engineering process would have been done before rescaling the dataset.
 
 # Modeling
 ## Default Random Forest Regressor
@@ -79,7 +79,7 @@ Grid space was set as below; 3 folds were used for the cross validation process.
 New model was fit and used to predict, producing the results below:
 ![image](https://user-images.githubusercontent.com/81454133/117600906-82633700-b112-11eb-9f7f-1a41c13c1894.png)
 
-Mean Absolute Error is still too high, and although the R-Squared score went up a little, the model seems to be overfitting as well.
+Mean Absolute Error is still too high, and although the R-Squared score got a little better, the model seems to be overfitting.
 
 ### Handling Outliers
 The new model was used to predict the gross of each movie and to find outliers; careful steps were taken to avoid data leakage.
