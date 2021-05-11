@@ -92,7 +92,7 @@ The new model was used to predict the gross of each movie and to find outliers; 
 
 Just from removing some of the outliers, we can see that the R-Square score went up significantly and that the model is not overfitting at all. However, the Mean Absolute Error still seems to be too high.
 
-## Modifying Dataset
+## Modifying Dataset/Remodeling
 In an attempt to see whether the model can perform better using less features; only some notable features were used to predict the gross of the movie as shown below:
 
 ![image](https://user-images.githubusercontent.com/81454133/117601364-c4d94380-b113-11eb-8aa6-e5eb762f6d30.png)
@@ -113,6 +113,13 @@ The Mean Absolute Error went down significantly from the previous models; and th
 
 Feature importances and the scatterplot of Actual Gross vs Predicted Gross are shown above.
 
+## Next Steps
+
+Numerous things come to mind in order to try and improve the model; but the biggest thing that comes to mind is information about other movies that was airing at the time of the movie. If it is possible to find a data set that contains the exact premier date and approximately how long each movie was in theatres for, it may be possible to create another feature that would quantify the amount of competition that the movie is going through.
+
+Another important feature that would be nice to consider is the number of theatres that the movie was be available at. This is most likely somewhat proportional to the budget of the movie; but nonetheless, it would be another feature that would be very helpful in predicting the gross of a movie.
+
+Additional feature engineering steps would be helpful too; trying a different number of features to use for the model or combining less frequent features may have a positive impact on the strength of the model.
 
 
 
