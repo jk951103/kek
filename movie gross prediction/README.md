@@ -115,7 +115,7 @@ Feature importances and the scatterplot of Actual Gross vs Predicted Gross are s
 
 # Next Steps
 
-Numerous things come to mind in order to try and improve the model; but the biggest thing that comes to mind is information about other movies that was airing at the time of the movie. If it is possible to find a data set that contains the exact premier date and approximately how long each movie was in theatres for, it may be possible to create another feature that would quantify the amount of competition that the movie is going through.
+Numerous ideas come to mind in order to try and improve the model; but perhaps the most crucial thing is information about other movies that were airing simultaneously to the current movie. If it is possible to find a data set that contains the exact premier date and approximately how long each movie was in theatres for, it may be possible to create another feature that would quantify the amount of competition that the movie is going through.
 
 Another important feature that would be nice to consider is the number of theatres that the movie was be available at. This is most likely somewhat proportional to the budget of the movie; but nonetheless, it would be another feature that would be very helpful in predicting the gross of a movie.
 
