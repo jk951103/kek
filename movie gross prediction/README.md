@@ -113,7 +113,7 @@ The Mean Absolute Error went down significantly from the previous models; and th
 
 Feature importances and the scatterplot of Actual Gross vs Predicted Gross are shown above.
 
-## Next Steps
+# Next Steps
 
 Numerous things come to mind in order to try and improve the model; but the biggest thing that comes to mind is information about other movies that was airing at the time of the movie. If it is possible to find a data set that contains the exact premier date and approximately how long each movie was in theatres for, it may be possible to create another feature that would quantify the amount of competition that the movie is going through.
 
